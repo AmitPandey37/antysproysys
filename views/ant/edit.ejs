@@ -1,0 +1,148 @@
+<%- include('../partials/header'); -%>
+
+    <!-- <div class="container"> .label {
+display: inline-block;
+} -->
+
+    <h1 style="text-align:center">Edit the product </h1>
+    <div class="row">
+        <div style="width:30%;margin:20px auto;">
+            <form action="/products/<%=pro._id %>?_method=PUT" method="POST">
+                <div class="form-group row">
+                    <label for="spec1" class="col-sm-2 col-form-label">Spec1 </label>
+                    <div class="col-sm-10">
+                        <input type="text" name="product[Specs1]" value="<%=pro.Specs1 %>" class="form-control" id="spec1">
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <label for="spec2" class="col-sm-2 col-form-label">Spec2</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="product[Specs2]" value="<%=pro.Specs2 %>" class="form-control" id="spec2">
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <label for="spec3" class="col-sm-2 col-form-label">Spec3</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="product[Specs3]" value="<%=pro.Specs3 %>" class="form-control" id="spec3">
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <label for="price" class="col-sm-2 col-form-label">Price</label>
+                    <div class="col-sm-10">
+                        <input type="number" name="product[Price]" value="<%=pro.Price %>" class="form-control" id="price">
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <label for="remark" class="col-sm-2 col-form-label">Remarks</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="product[Remarks]" value="<%=pro.Remarks %>" class="form-control" id="remark">
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <label for="contact" class="col-sm-2 col-form-label">First-Ants-Contact</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="product[FirstAntsContact]" value="<%=pro.FirstAntsContact%>" class="form-control"
+                            id="contact">
+                    </div>
+
+                </div>
+                <div class="form-group row row">
+                    <label for="contactnumber" class="col-sm-2 col-form-label">Contact-Number</label>
+                    <div class="col-sm-10">
+                        <input type="number" name="product[ContactNumber]" value="<%=pro.ContactNumber%>" class="form-control"
+                            id="contactnumber">
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <label for="email" class="col-sm-2 col-form-label">Customer-Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="product[CustomerEmail]" value="<%=pro.CustomerEmail%>" class="form-control" id="email">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="branch" class="col-sm-2 col-form-label">Company-Branch</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="product[CompanyBranch]" value="<%=pro.CompanyBranch %>" class="form-control" id="branch">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inform" class="col-sm-2 col-form-label">Inform-Date</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="product[InformDate]" value="<%=pro.InformDate%>" class="form-control" id="inform">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="dispatch" class="col-sm-2 col-form-label">Dispatch-Date</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="product[DispatchDate]" value="<%=pro.DispatchDate %>" class="form-control"
+                            id="dispatch">
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <label for="po" class="col-sm-2 col-form-label">PO-Date</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="product[POdate]" value="<%=pro.POdate %>" class="form-control" id="po">
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <label for="orderid" class="col-sm-2 col-form-label">Order-ID</label>
+                    <div class="col-sm-10">
+                        <input type="number" name="product[order_id]" value="<%=pro.order_id %>" class="form-control" id="orderid">
+                    </div>
+
+                </div>
+                <div class="mt-2 form-group row">
+                    <label for="instituteorcompany" class="col-sm-2 col-form-label">Institute</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="product[InstituteOrCompany]" value="<%=pro.InstituteOrCompany %>"
+                            class="form-control" id="instituteorcompany">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="customercategory" class="col-sm-2 col-form-label">Customer-Category</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="product[CustomerCategory]" value="<%=pro.CustomerCategory %>" class="form-control"
+                            id="customercategory">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="contactperson" class="col-sm-2 col-form-label">Contact-Person</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="product[Contactperson]" value="<%=pro.Contactperson %>" class="form-control"
+                            id="contactperson">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="department" class="col-sm-2 col-form-label">Department</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="product[Department]" value="<%=pro.Department %>" class="form-control"
+                            id="department">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="item" class="col-sm-2 col-form-label">Item</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="product[Item]" value="<%=pro.Item %>" class="form-control" id="item">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary border btn-block">Submit</button>
+                </div>
+
+            </form>
+            <a href="/">Go Back</a>
+        </div>
+    </div>
+
+    <!-- </div> -->
+
+    <%- include('../partials/footer'); -%>
