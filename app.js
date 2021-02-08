@@ -6,7 +6,7 @@ var express = require('express');
     methodOverride = require('method-override')
     expressSanitizer = require('express-sanitizer')
     Ant = require('./models/ants')
-
+    WIP = require('./models/wip')
 mongoose.connect("mongodb://localhost:27017/ants",{useNewUrlParser: true,useUnifiedTopology: true,useFindAndModify: false})
 
 app.use(bodyParser.urlencoded({extended:true}));
@@ -109,6 +109,59 @@ app.delete("/blogs/:id",function(req,res){
     })
 })
 
+
+// WIP ROUTES
+
+app.get('/wip',function(req,res){
+    WIP.find({},function(err,wipdata){
+            if(err){
+                    console.log(err);
+            }
+            else{
+               res.render('products',{antsdata:wipdata})
+            }
+        })
+})
+
+app.get('/wip/:id/new',function(req,res){
+    Ant.findById(req.params.id, function(err,foundproduct){
+            if(err){
+                res.redirect("/products/search")
+            } else{
+                // console.log(foundproduct)
+                res.render("./wip/form",{pro:foundproduct});
+                foundproduct.remove();
+            }
+    })
+})
+
+app.post('/wip',function(req,res){
+    WIP.create(req.body.product,function(err,Created){
+        if(err){
+            console.log(err)
+        }
+        else{
+            res.redirect('/wip');
+        }
+    })
+})
+
+app.get("/wip/search",function(req,res){
+   res.render("./wip/search");
+})
+
+app.post("/wip/search/order_id",function(req,res){
+    var order_id = req.body.order_id;
+    WIP.find({order_id : order_id},function(err,product){
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.render('./wip/product',{product:product})
+        }
+    });
+    
+});
 
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`)
