@@ -1,0 +1,51 @@
+<%- include('../partials/header'); -%>
+
+<div class="row">
+    <div class="container">
+        <div class="col-lg-12">
+            <h1>Our Product</h1>
+        </div>
+    </div>
+</div>
+    
+
+            <% product.forEach(function(pro){ %>
+                <div class="container">
+                    <header class="jumbotron">
+                        <div class="container">
+                                <h4><b>Specs 1: </b>    <%= pro.Specs1 %></h4>
+                                <h4><b>Specs 2: </b>    <%=pro.Specs2 %></h4>
+                                <h4><b>Specs 3: </b>    <%=pro.Specs3%></h4>
+                                <h4><b>Price: </b>    <%=pro.Price %></h4>
+                                <h4><b>Remarks: </b>    <%=pro.Remarks %></h4>
+                                <h4><b>FirstAntsContact: </b>    <%=pro.FirstAntsContact %></h4>
+                                <h4><b>ContactNumber: </b>    <%=pro.ContactNumber %></h4>
+                                <h4><b>CustomerEmail: </b>    <%=pro.CustomerEmail %></h4>
+                                <h4><b>CompanyBranch: </b>    <%=pro.CompanyBranch %></h4>
+                                <h4><b>InformDate: </b>    <%=pro.InformDate %></h4>
+                                <h4><b>DispatchDate: </b>    <%=pro.DispatchDate %></h4>
+                                <h4><b>POdate: </b>    <%=pro.POdate %></h4>
+                                <h4><b>OrderId: </b>    <%=pro.order_id %></h4>
+                                <h4><b>InstituteOrCompany: </b>    <%=pro.InstituteOrCompany %></h4>
+                                <h4><b>CustomerCategory: </b>    <%=pro.CustomerCategory%></h4>
+                                <h4><b>Contactperson: </b>    <%=pro.Contactperson %></h4>
+                                <h4><b>Department: </b>    <%=pro.Department %></h4>
+                                <h4><b>Item: </b>    <%=pro.Item %></h4>
+
+                        </div>
+                    </header>
+                    
+                    <a href="/products/<%=pro._id %>/edit" class="btn btn-lg btn-primary border btn-block">Edit</a>
+                    <form action="/blogs/<%= pro._id %>?_method=DELETE" method="POST">
+                        <br>
+                            <button class="btn btn-lg btn-primary border btn-block">Delete</button>
+                            <br>
+                    </form>
+                </div>
+            <% }) %>
+
+        
+               
+            
+
+    <%- include('../partials/footer'); -%>
